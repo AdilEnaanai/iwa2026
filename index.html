@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion des produits</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Liste des produits</h1>
+    <form id="formProduit">
+      <input type="text" name="id" id="id" placeholder="Id" />
+      <input type="text" name="nom" id="nom" placeholder="Nom" />
+      <input type="number" name="prix" id="prix" placeholder="Prix" />
+      <button type="button" id="ajouterBTN">Ajouter</button>
+    </form>
+    <div>
+      <table id="tableProduit" border="1">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="listeProduits"></tbody>
+      </table>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
