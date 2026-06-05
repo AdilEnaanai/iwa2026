@@ -1,6 +1,6 @@
 #tableProduit {
   border-collapse: collapse;
-  width: 80%;
+  width: 100%;
 }
 
 #tableProduit th,
@@ -21,4 +21,49 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+#formContainer {
+  display: none;
+  width: 40%;
+}
+
+#tableContainer {
+  width: 80%;
+}
+#ajouterProduit {
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  float: right;
+}
+
+#formProduit {
+  margin: 0 auto;
+}
+
+#formProduit input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 96.5%;
+}
+#ajouterBTN {
+  padding: 10px 24px;
+  background-color: #0d58af;
+  color: white;
+  border: none;
+  cursor: pointer;
+  float: right;
+}
+#annulerBTN {
+  padding: 10px 20px;
+  background-color: #6e6e6e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#formProduit button:hover {
+  background-color: #45a049;
 }

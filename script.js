@@ -49,3 +49,18 @@ window.addEventListener("load", () => {
     toTable(produit);
   }
 });
+
+// Ajouter un événement de clic au bouton "Ajouter" pour afficher le formulaire
+const ajouterProduitBtn = document.querySelector("#ajouterProduit");
+const formContainer = document.querySelector("#formContainer");
+const tableContainer = document.querySelector("#tableContainer");
+ajouterProduitBtn.addEventListener("click", () => {
+  formContainer.style.display = "block";
+  tableContainer.style.display = "none";
+});
+// Ajouter un événement de clic au bouton "Annuler" pour masquer le formulaire
+const annulerBTN = document.querySelector("#annulerBTN");
+annulerBTN.addEventListener("click", () => {
+  formContainer.style.display = "none";
+  tableContainer.style.display = "block";
+});
