@@ -8,6 +8,7 @@ const annulerBTN = document.querySelector("#annulerBTN");
 
 // Ajouter un événement de clic au bouton "Ajouter"
 ajouterBTN.addEventListener("click", (event) => {
+  vent.preventDefault();
   // Récupérer les données du formulaire
   const formData = new FormData(formProduit);
   const produit = Object.fromEntries(formData);
@@ -21,10 +22,7 @@ ajouterBTN.addEventListener("click", (event) => {
     currentLine = null;
   } else {
     axios
-      .post(
-        "https://6a2b02a5b687a7d5cbc4c5f1.mockapi.io/produits/Produit",
-        produit,
-      )
+      .post("http://localhost:3000/produits", produit)
       .then((response) => {
         toTable(response.data);
       })
@@ -65,9 +63,7 @@ const toTable = (produit) => {
     "https://files.softicons.com/download/toolbar-icons/vista-base-software-icons-2-by-icons-land/ico/DeleteRed.ico";
   deleteIcon.addEventListener("click", () => {
     axios
-      .delete(
-        `https://6a2b02a5b687a7d5cbc4c5f1.mockapi.io/produits/Produit/${produit.id}`,
-      )
+      .delete(`http://localhost:3000/produits/${produit.id}`)
       .then(() => {
         console.log("Produit supprimé avec succès");
         listeProduits.removeChild(tr);
@@ -106,7 +102,7 @@ window.addEventListener("load", () => {
   }*/
   //Depuis l'API
   axios
-    .get("https://6a2b02a5b687a7d5cbc4c5f1.mockapi.io/produits/Produit")
+    .get("http://localhost:3000/produits")
     .then((response) => {
       response.data.forEach((produit) => {
         toTable(produit);
@@ -125,6 +121,7 @@ ajouterProduitBtn.addEventListener("click", () => {
 });
 // Ajouter un événement de clic au bouton "Annuler" pour masquer le formulaire
 annulerBTN.addEventListener("click", () => {
+  event.preventDefault();
   formContainer.style.display = "none";
   tableContainer.style.display = "block";
   document.querySelector("#id").disabled = false;
